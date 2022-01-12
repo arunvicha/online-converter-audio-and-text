@@ -1,0 +1,66 @@
+<!doctype html>
+	<head>
+		<style>
+			/* CSS comes here */
+			body {
+			    font-family:arial;
+			}
+			input {
+			    padding: 10px;
+			    width: 300px;
+			    border-radius: 5px;
+			    border: solid 2px #BBB;
+			}
+			div {
+			    margin:10px 0px;
+			}
+			button {
+			    padding:10px;
+			    background-color:#6a67ce;
+			    color: #FFFFFF;
+			    border: 0px;
+			    cursor:pointer;
+			    border-radius: 5px;
+			}
+			span{
+				color: red;
+			}
+			a:link, a:visited {
+  background-color: #f44336;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover, a:active {
+  background-color: red;
+}
+		</style>
+		<title>Text to audio converter online</title>
+	</head>
+	<body>
+        <h1><span>W</span>elcome to online text to audio converter</h1>
+		<div><input type="text" id="name" placeholder="Enter your text here"/></div>
+        <div><button type="button" class="button" onclick="textToAudio()">Click here</button></div>
+        <br/>
+		<h3 id="demo"></h3>
+		<a href="voice.html">Click here for audio to text converter</a>
+		<script>
+			/* JS comes here */
+            function textToAudio() {
+                var text_msg = document.getElementById("name").value;
+                var speech = new SpeechSynthesisUtterance();
+                speech.lang = "en-US";
+                
+                speech.text =text_msg;
+                speech.volume = 1;
+                speech.rate = 1;
+                speech.pitch = 1;
+                
+                window.speechSynthesis.speak(speech);
+			}
+		</script>
+	</body>
+</html> 
